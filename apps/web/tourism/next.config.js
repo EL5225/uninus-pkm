@@ -12,6 +12,17 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+
+  webpack(config) {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      dns: false,
+      tls: false,
+      net: false,
+    };
+    return config;
+  },
 };
 
 const plugins = [

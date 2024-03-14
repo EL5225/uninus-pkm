@@ -1,21 +1,10 @@
 import { TMetaResponse } from '../common';
+
 export type TUser = {
   id: string;
   fullname: string;
   image?: string;
   email: string;
-  organization?: {
-    id?: string;
-    name?: string;
-  };
-  faculty?: {
-    id?: string;
-    name?: string;
-  };
-  department?: {
-    id?: string;
-    name?: string;
-  };
   role: {
     id: string;
     name: string;

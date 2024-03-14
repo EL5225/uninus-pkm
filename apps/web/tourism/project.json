@@ -4,24 +4,6 @@
   "sourceRoot": "apps/web/tourism",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "apps/web/tourism",
-        "postcssConfig": "apps/web/tourism/postcss.config.js"
-      },
-      "configurations": {
-        "development": {
-          "outputPath": "apps/web/tourism"
-        },
-        "production": {
-          "generateLockfile": true
-        }
-      }
-    },
-
     "container": {
       "executor": "@nx-tools/nx-container:build",
       "dependsOn": ["build"],
