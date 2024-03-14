@@ -1,9 +1,10 @@
 # Uninus PKM
 
-## Didalam Repo ini terdapat 2 Aplikasi:
+## Didalam Repo ini terdapat 3 Aplikasi:
 
-- Backoffice
-- Backoffice-API
+- Pasar Desa
+- Wisata Desa
+- Layanan Desa Terpadu
 
 ## Demo Aplikasi
 
