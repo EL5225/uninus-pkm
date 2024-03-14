@@ -2,7 +2,22 @@ import { PropsWithChildren } from 'react';
 import { AuthRegisterPersonalModule } from '.';
 import { render } from '@testing-library/react';
 
-jest.mock('react-avatar');
+jest.mock('react-avatar', () => ({
+  Avatar: jest.fn(() => <></>),
+}));
+
+jest.mock('next/link', () => ({
+  Link: jest.fn(() => <></>),
+}));
+
+jest.mock('react-select', () => ({
+  Select: jest.fn(() => <></>),
+}));
+
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+  usePathname: jest.fn(),
+}));
 
 jest.mock('react-hook-form', () => ({
   ...jest.requireActual('react-hook-form'),
