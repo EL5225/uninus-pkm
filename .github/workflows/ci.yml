@@ -25,4 +25,4 @@ jobs:
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx affected --base=[SHA1] --head=[SHA2] -t lint build e2e-ci
+      - run: npx nx affected --base=[SHA1] --head=[SHA2] -t lint build test e2e-ci
