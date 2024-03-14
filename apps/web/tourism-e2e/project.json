@@ -1,0 +1,7 @@
+{
+  "name": "web-tourism-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web/tourism-e2e/src",
+  "targets": {},
+  "implicitDependencies": ["web-tourism"]
+}

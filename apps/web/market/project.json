@@ -1,0 +1,55 @@
+{
+  "name": "web-market",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web/market",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "apps/web/market",
+        "postcssConfig": "apps/web/market/postcss.config.js"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/web/market"
+        },
+        "production": {
+          "generateLockfile": true
+        }
+      }
+    },
+
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "engine": "docker",
+        "metadata": {
+          "images": ["web-market"],
+          "load": true,
+          "tags": [
+            "type=schedule",
+            "type=ref,event=branch",
+            "type=ref,event=tag",
+            "type=ref,event=pr",
+            "type=sha,prefix=sha-"
+          ]
+        }
+      },
+      "configurations": {
+        "local": {
+          "tags": ["web-market:latest"],
+          "push": false
+        },
+        "production": {
+          "tags": ["my.image-registry.com/my-app:latest"],
+          "push": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
