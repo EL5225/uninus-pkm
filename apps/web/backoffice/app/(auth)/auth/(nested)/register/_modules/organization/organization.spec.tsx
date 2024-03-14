@@ -2,6 +2,16 @@ import { PropsWithChildren } from 'react';
 import { AuthRegisterOrganizationModule } from '.';
 import { render } from '@testing-library/react';
 
+jest.mock('drizzle-orm/node-postgres', () => ({
+  drizzle: jest.fn(() => ({})),
+}));
+
+jest.mock('pg', () => {
+  return {
+    Pool: jest.fn(() => ({})),
+  };
+});
+
 jest.mock('react-avatar', () => ({
   Avatar: jest.fn(() => <></>),
 }));

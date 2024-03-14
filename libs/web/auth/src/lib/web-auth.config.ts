@@ -87,4 +87,4 @@ export const authOptions = {
       return session;
     },
   },
-} as AuthOptions;
+} satisfies AuthOptions;

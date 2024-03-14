@@ -4,24 +4,6 @@
   "sourceRoot": "apps/web/backoffice",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "apps/web/backoffice",
-        "postcssConfig": "apps/web/backoffice/postcss.config.js"
-      },
-      "configurations": {
-        "development": {
-          "outputPath": "apps/web/backoffice"
-        },
-        "production": {
-          "generateLockfile": true
-        }
-      }
-    },
-
     "container": {
       "executor": "@nx-tools/nx-container:build",
       "dependsOn": ["build"],
