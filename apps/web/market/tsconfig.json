@@ -16,10 +16,7 @@
         "name": "next"
       }
     ],
-    "types": [
-      "jest",
-      "node"
-    ]
+    "types": ["jest", "node"]
   },
   "include": [
     "**/*.ts",
@@ -29,7 +26,12 @@
     "../../../apps/web/market/.next/types/**/*.ts",
     "../../../dist/apps/web/market/.next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../../../libs/web/service/src/trpc/market/client.ts",
+    "../../../libs/web/service/src/trpc/client.ts",
+    "../../../libs/web/service/src/trpc/market/client/provider.tsx",
+    "../../../libs/web/service/src/trpc/market/client/provider.tsx",
+    "../../../libs/web/service/src/trpc/market/client/client.ts"
   ],
   "exclude": [
     "node_modules",

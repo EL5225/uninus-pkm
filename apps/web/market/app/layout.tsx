@@ -1,3 +1,4 @@
+import { MarketProvider } from '@psu/web-services';
 import './global.css';
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MarketProvider>{children}</MarketProvider>
+      </body>
     </html>
   );
 }
