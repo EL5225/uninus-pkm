@@ -30,7 +30,8 @@
       ],
       "@psu/web-modules": ["libs/web/modules/src/index.ts"],
       "@psu/web-modules/server": ["libs/web/modules/src/server.ts"],
-      "@psu/web-services": ["libs/web/service/src/index.ts"]
+      "@psu/web-services": ["libs/web/service/src/index.ts"],
+      "@psu/web-services/server": ["libs/web/service/src/server.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

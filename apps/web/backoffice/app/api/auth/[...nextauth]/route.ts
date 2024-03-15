@@ -4,7 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import CreadentialProvider from 'next-auth/providers/credentials';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { TMetaErrorResponse, TToken, TUser } from '@psu/entities';
-import { dbBackoffice, roles, users } from '@psu/web-services';
+import { dbBackoffice, roles, users } from '@psu/web-services/server';
 import { eq } from 'drizzle-orm';
 import * as argon2 from 'argon2';
 import type { Adapter } from 'next-auth/adapters';
