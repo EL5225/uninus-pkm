@@ -1,52 +1,51 @@
 'use client';
-import { TUser } from '@psu/entities';
+
+import Image from 'next/image';
 import { FC, ReactElement, useState } from 'react';
-import Avatar from 'react-avatar';
-import { FaBell, FaChevronDown, FaUser, FaSignOutAlt } from 'react-icons/fa';
-import { signOut } from 'next-auth/react';
+import { InputText } from '@psu/web-component-atoms';
+import { IoCloseSharp } from 'react-icons/io5';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-export const Navbar: FC<{ user: TUser }> = (props): ReactElement => {
-  const [open, setOpen] = useState(false);
+export const Navbar: FC<{ logoUrl: string }> = ({ logoUrl }): ReactElement => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
-    <nav className="bg-white cursor-pointer shadow-md p-4 items-center flex justify-between">
-      <span className="text-lg font-bold">Dashboard</span>
+    <nav className="bg-white fixed top-0 z-10 w-full shadow-md py-4 p-2 md:px-10 items-center flex justify-between">
+      <Image src={logoUrl} alt="logo" width={50} height={50} />
+      {isOpen ? (
+        <IoCloseSharp
+          id="close-dropdown"
+          className="absolute right-8 top-6 cursor-pointer text-lg text-grey-900 md:hidden"
+          onClick={handleOpen}
+        />
+      ) : (
+        <GiHamburgerMenu
+          id="open-dropdown"
+          className="absolute right-8 top-6 cursor-pointer text-lg text-grey-900 md:hidden"
+          onClick={handleOpen}
+        />
+      )}
       <div
-        onClick={() => setOpen(!open)}
-        className="flex gap-x-4 relative items-center"
+        className={`md:flex items-start md:items-center gap-10 ${
+          isOpen
+            ? 'flex flex-col absolute bg-white top-[4.5rem] left-0 p-5 w-full'
+            : 'hidden'
+        }`}
       >
-        <div className="bg-warning  w-auto h-auto rounded-lg p-2 text-black mr-4">
-          <FaBell size={22} />
-        </div>
-        <Avatar
-          name={props.user?.fullname}
-          size={'40'}
-          className="rounded-full w-auto h-auto"
-        />
-        <span className="text-lg font-medium text-black select-none">
-          {props.user?.fullname}
-        </span>
-        <FaChevronDown
-          style={{
-            transform: open ? 'rotate(180deg)' : 'none',
-          }}
-          size={22}
-        />
-
-        {open && (
-          <div className="absolute z-20 flex flex-col gap-y-1 bg-white shadow-md p-4 min-w-[300px] w-auto h-auto top-16 rounded-lg right-2">
-            <div className="flex gap-x-2 items-center hover:bg-primary-50 py-2 px-1 rounded-lg">
-              <FaUser />
-              <span>Profile</span>
-            </div>
-            <div
-              onClick={() => signOut()}
-              className="flex gap-x-2 items-center hover:bg-primary-50 py-2 px-1 rounded-lg"
-            >
-              <FaSignOutAlt />
-              <span>Keluar</span>
-            </div>
-          </div>
-        )}
+        <ul
+          className={`gap-5 md:gap-10 cursor-pointer text-lg flex ${
+            isOpen && 'flex-col'
+          }`}
+        >
+          <li>Beranda</li>
+          <li>Profil</li>
+          <li>Kontak</li>
+          <li>Inspirasi</li>
+        </ul>
+        <InputText size="sm" placeholder="Cari wisata ..." />
       </div>
     </nav>
   );
