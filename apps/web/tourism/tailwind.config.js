@@ -12,6 +12,9 @@ module.exports = {
   ],
   theme: {
     colors,
+    backgroundImage: {
+      hero: 'url("../public/assets/bandung.jpg")',
+    },
   },
   plugins: [],
 };
