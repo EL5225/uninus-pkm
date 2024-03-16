@@ -1,9 +1,10 @@
+import { FC, ReactElement } from 'react';
 import { BiGlobe, BiMap } from 'react-icons/bi';
 import { MdMailOutline } from 'react-icons/md';
 import { AiOutlinePhone } from 'react-icons/ai';
 import { IoSettingsOutline } from 'react-icons/io5';
 
-export const Footer = () => {
+export const Footer: FC = (): ReactElement => {
   return (
     <footer>
       <section className="grid grid-cols-1 md:grid-cols-4 p-5 md:p-16 gap-10 bg-[#626262]/50">

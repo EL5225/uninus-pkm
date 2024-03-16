@@ -1,5 +1,8 @@
+import { NextPage } from 'next';
+import { ReactElement } from 'react';
 import { TourismModule } from './_module';
 
-export default function Index() {
+const LandingPage: NextPage = (): ReactElement => {
   return <TourismModule />;
-}
+};
+export default LandingPage;

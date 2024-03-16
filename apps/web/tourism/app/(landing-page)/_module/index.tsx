@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 import { Footer, Navbar } from '@psu/web-component-molecules';
 import { Button } from '@psu/web-component-atoms';
 
-export const TourismModule: FC = () => {
+export const TourismModule: FC = (): ReactElement => {
   return (
     <main className="w-full min-h-screen space-y-10">
       <Navbar logoUrl="/assets/logo.svg" />
