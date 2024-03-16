@@ -2,6 +2,10 @@ import { PropsWithChildren } from 'react';
 import { AuthRegisterPersonalModule } from '.';
 import { render } from '@testing-library/react';
 
+jest.mock('next/image', () => ({
+  Image: jest.fn(() => <></>),
+}));
+
 jest.mock('react-avatar', () => ({
   Avatar: jest.fn(() => <></>),
 }));

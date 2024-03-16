@@ -84,6 +84,7 @@
     "react-select": "^5.8.0",
     "superjson": "^2.2.1",
     "supertest": "^6.3.4",
+    "tailwind-merge": "^2.2.2",
     "ts-pattern": "^5.0.8",
     "tslib": "^2.6.2",
     "zod": "^3.22.4"

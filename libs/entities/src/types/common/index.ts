@@ -168,14 +168,14 @@ export type TSelect = TInputExtend & {
 export type TPieChart = {
   title: string;
   type: string;
-  data:{
+  data: {
     labels: string[];
     datasets: Array<{
       label: string;
       data: [];
       backgroundColor: string[];
     }>;
-  }
+  };
   hoverOffset: number;
 };
 export type TLineChart = {

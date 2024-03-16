@@ -1,9 +1,14 @@
 import { PropsWithChildren } from 'react';
 import { AuthRegisterOrganizationModule } from '.';
 import { render } from '@testing-library/react';
+import { TMetaErrorResponse } from '@psu/entities';
 
 jest.mock('drizzle-orm/node-postgres', () => ({
   drizzle: jest.fn(() => ({})),
+}));
+
+jest.mock('next/image', () => ({
+  Image: jest.fn(() => <></>),
 }));
 
 jest.mock('pg', () => {
@@ -94,7 +99,9 @@ jest.mock('next-usequerystate', () => ({ useQueryState: () => ({}) }));
 
 describe('Auth Register Personal Module', () => {
   it('Should render successfully', () => {
-    const { baseElement } = render(<AuthRegisterOrganizationModule />);
+    const { baseElement } = render(
+      <AuthRegisterOrganizationModule errorData={{} as TMetaErrorResponse} />
+    );
     expect(baseElement).toBeTruthy();
   });
 });

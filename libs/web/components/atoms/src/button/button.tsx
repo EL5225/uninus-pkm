@@ -1,8 +1,7 @@
 import type { FC, ReactElement } from 'react';
-import { clsx } from 'clsx';
 import { P, match } from 'ts-pattern';
 import Link from 'next/link';
-import { TButton } from '@psu/entities';
+import { TButton, cn } from '@psu/entities';
 
 export const Button: FC<TButton> = ({
   variant = 'primary',
@@ -11,22 +10,21 @@ export const Button: FC<TButton> = ({
   state = 'default',
   ...props
 }): ReactElement => {
-  const className = clsx(
-    'rounded-lg text-white hover:opacity-80 font-medium transition-all',
-    'disabled:cursor-not-allowed disabled:hover:opacity-80 disabled:bg-grey-200',
-    'text-sm px-4 py-2',
+  const className = cn(
+    'rounded-sm text-white hover:opacity-80 font-medium transition-all',
+    'disabled:cursor-not-allowed disabled:hover:opacity-80 disabled:bg-neutral-20%',
+    'px-4 py-2',
     {
-      'border bg-transparent border-grey-200 text-grey-900':
+      'border bg-transparent border-neutral-20% text-neutral-90%':
         variantType === 'outline',
       'border-none': variantType === 'solid',
     },
     {
       'bg-primary': variant === 'primary' && variantType === 'solid',
-      'bg-primary-2': variant === 'secondary' && variantType === 'solid',
-      'bg-success': variant === 'success' && variantType === 'solid',
-      'bg-error': variant === 'error' && variantType === 'solid',
-      'bg-warning': variant === 'warning' && variantType === 'solid',
-      'bg-info': variant === 'info' && variantType === 'solid',
+      'bg-secondary': variant === 'secondary' && variantType === 'solid',
+      'bg-red': variant === 'error' && variantType === 'solid',
+      'bg-yellow': variant === 'warning' && variantType === 'solid',
+      'bg-blue': variant === 'info' && variantType === 'solid',
     },
     {
       'border-bg-primary text-primary':
@@ -43,9 +41,9 @@ export const Button: FC<TButton> = ({
         variant === 'info' && variantType === 'outline',
     },
     {
-      'md:text-sm md:px-2 md:py-1': size === 'sm',
-      'md:text-md md:px-4 md:py-2': size === 'md',
-      'md:text-lg md:px-6 md:py-3': size === 'lg',
+      'md:text-[10px] md:px-2 md:py-1': size === 'sm',
+      'md:text-xs md:px-4 md:py-2': size === 'md',
+      'md:text-sm md:px-6 md:py-3': size === 'lg',
     }
   );
 
