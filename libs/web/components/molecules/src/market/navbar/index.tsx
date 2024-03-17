@@ -1,7 +1,7 @@
 import { Button, InputText } from '@psu/web-component-atoms';
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 
-export const NavbarMarket: FC = () => {
+export const NavbarMarket: FC = (): ReactElement => {
   return (
     <header className="w-full h-[116px] flex items-center px-10 justify-between shadow-lg">
       <figure className="flex gap-4">

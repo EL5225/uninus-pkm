@@ -3,7 +3,7 @@ import { TTextArea, className } from '@psu/entities';
 
 export const InputTextArea: FC<TTextArea> = ({
   size = 'sm',
-  status = 'primary',
+  status = 'default',
   placeholder = 'Masukkan Data',
   ...props
 }) => {

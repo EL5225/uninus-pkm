@@ -1,9 +1,9 @@
 'use client';
 // import { trpc } from '@psu/web-services';
 import { NavbarMarket } from '@psu/web-component-molecules';
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 
-export const MarketModule: FC = () => {
+export const MarketModule: FC = (): ReactElement => {
   return (
     <main className="w-full h-screen flex flex-col">
       <NavbarMarket />

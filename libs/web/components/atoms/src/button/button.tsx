@@ -24,21 +24,18 @@ export const Button: FC<TButton> = ({
       'bg-secondary': variant === 'secondary' && variantType === 'solid',
       'bg-red': variant === 'error' && variantType === 'solid',
       'bg-yellow': variant === 'warning' && variantType === 'solid',
-      'bg-blue': variant === 'info' && variantType === 'solid',
     },
     {
       'border-bg-primary text-primary':
         variant === 'primary' && variantType === 'outline',
-      'border-bg-primary-2 text-primary-2':
+      'border-bg-secondary text-secondary':
         variant === 'secondary' && variantType === 'outline',
-      'border-bg-success text-success':
+      'border-bg-green text-green':
         variant === 'success' && variantType === 'outline',
-      'border-bg-error text-error':
+      'border-bg-red text-red':
         variant === 'error' && variantType === 'outline',
-      'border-bg-warning text-warning':
+      'border-bg-yellow text-yellow':
         variant === 'warning' && variantType === 'outline',
-      'border-bg-info text-info':
-        variant === 'info' && variantType === 'outline',
     },
     {
       'md:text-[10px] md:px-2 md:py-1': size === 'sm',

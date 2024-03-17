@@ -2,8 +2,7 @@ import { FC, ReactElement, useId } from 'react';
 import ReactSelect, { StylesConfig } from 'react-select';
 import { match } from 'ts-pattern';
 import { IoChevronDown } from 'react-icons/io5';
-import { clsx } from 'clsx';
-import { TSelect } from '@psu/entities';
+import { TSelect, cn } from '@psu/entities';
 
 export const InputSelect: FC<TSelect> = (props): ReactElement => {
   const statusBackgroundColor = match(props.status)
@@ -19,9 +18,9 @@ export const InputSelect: FC<TSelect> = (props): ReactElement => {
     .with('error', () => '#FCA5A5')
     .otherwise(() => '#6A7280');
 
-  const statusDropdownIconColor = clsx('mr-2', {
+  const statusDropdownIconColor = cn('mr-2', {
     'text-error': props.status === 'error',
-    'text-grey-400': props.status === 'none' || !props.status,
+    'text-neutral-40%': props.status === 'none' || !props.status,
   });
 
   const id = useId();
