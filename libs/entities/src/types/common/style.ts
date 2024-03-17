@@ -1,8 +1,8 @@
-import { clsx } from 'clsx';
 import { TInput } from '.';
+import { cn } from '../../utils';
 
 export const className = ({ size = 'sm', status = 'default' }: TInput) =>
-  clsx(
+  cn(
     'rounded-md w-full border outline-none focus:ring-none focus:outline-none',
     'disabled:cursor-not-allowed disabled:bg-grey-50',
     'transition duration-300 ease-in-out px-3 py-2 text-sm',
@@ -12,13 +12,11 @@ export const className = ({ size = 'sm', status = 'default' }: TInput) =>
       'md:px-5 md:py-4': size === 'lg',
     },
     {
-      'bg-white border-grey-200 text-grey-300 placeholder:text-grey-300':
+      'bg-white border-2 border-green text-neutral-30% placeholder:text-neutral-30%':
         status === 'default' || !status,
-      'bg-success-50 text-success border-success placeholder:text-success':
-        status === 'success',
-      'bg-error-50 border-error text-error placeholder:text-error':
-        status === 'error',
-      'bg-warning-50 text-warning border-warning placeholder:text-warning':
+      'bg-green-10% text-green placeholder:text-green': status === 'success',
+      'bg-red-10% text-red placeholder:text-red': status === 'error',
+      'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
         status === 'warning',
     }
   );

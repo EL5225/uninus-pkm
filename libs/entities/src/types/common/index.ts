@@ -68,9 +68,9 @@ export type TVariantType = 'solid' | 'outline';
 
 export type TState = 'default' | 'loading';
 
-export type TInputExtend = {
+export type TInputExtend<T = undefined> = {
   size?: TSize;
-  status?: Omit<TVariant, 'primary' | 'secondary'>;
+  status?: Exclude<TVariant, 'primary' | 'secondary'> | T;
 };
 
 export type TInput = Omit<
@@ -98,7 +98,7 @@ export type TButton = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > & {
-  variant?: Omit<TVariant, 'default' | 'info'>;
+  variant?: Exclude<TVariant, 'default' | 'info'>;
   size?: TSize;
   variantType?: TVariantType;
   href?: string;
@@ -135,10 +135,10 @@ export type TMessage = DetailedHTMLProps<
   HTMLAttributes<HTMLSpanElement>,
   HTMLSpanElement
 > &
-  TInputExtend;
+  TInputExtend<'none'>;
 
 export type TFieldSet = Omit<DetailedHTMLProps<any, any>, 'size' | 'type'> &
-  TInputExtend &
+  TInputExtend<'none'> &
   Pick<InputHTMLAttributes<HTMLInputElement>, 'type'>;
 
 export type TForm = DetailedHTMLProps<
@@ -151,7 +151,7 @@ export type TSelectOption<T = string | number | boolean | unknown> = {
   value: T;
 };
 
-export type TSelect = TInputExtend & {
+export type TSelect = TInputExtend<'none'> & {
   options?: TSelectOption[];
   disabled?: boolean;
   label?: string;
@@ -168,14 +168,14 @@ export type TSelect = TInputExtend & {
 export type TPieChart = {
   title: string;
   type: string;
-  data:{
+  data: {
     labels: string[];
     datasets: Array<{
       label: string;
       data: [];
       backgroundColor: string[];
     }>;
-  }
+  };
   hoverOffset: number;
 };
 export type TLineChart = {

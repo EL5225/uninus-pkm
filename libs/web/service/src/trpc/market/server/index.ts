@@ -1,7 +1,11 @@
 import { publicProcedure, router } from '../../config';
 
 export const marketRouter = router({
-  greet: publicProcedure.query(() => 'Hello from market tRPC!'),
+  greet: publicProcedure.query(() => {
+    return {
+      message: 'Hello from market tRPC!',
+    };
+  }),
   test: publicProcedure.query(() => 'Test from market tRPC!'),
 });
 

@@ -8,6 +8,7 @@ export const InputText: FC<TInput> = ({
   ...props
 }) => {
   const id = useId();
+
   return (
     <input
       {...props}

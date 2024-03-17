@@ -6,6 +6,10 @@ jest.mock('react-avatar', () => ({
   Avatar: jest.fn(() => <></>),
 }));
 
+jest.mock('next/image', () => ({
+  Image: jest.fn(() => <></>),
+}));
+
 jest.mock('react-hook-form', () => ({
   ...jest.requireActual('react-hook-form'),
   Controller: () => <></>,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Page from '../app/page';
+import Page from '../app/(landing)/page';
 import { MarketProvider } from '@psu/web-services';
 
 describe('Page', () => {
