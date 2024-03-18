@@ -1,51 +1,75 @@
-import type { FC, ReactElement } from 'react';
+import { Fragment, type FC, type ReactElement } from 'react';
 import { P, match } from 'ts-pattern';
 import Link from 'next/link';
 import { TButton, cn } from '@psu/entities';
+import { AiFillCaretDown } from 'react-icons/ai';
 
 export const Button: FC<TButton> = ({
   variant = 'primary',
   size = 'sm',
-  variantType = 'solid',
+  variantType = 'primary',
   state = 'default',
+  useIconArrowDown,
   ...props
 }): ReactElement => {
   const className = cn(
-    'rounded-sm text-white hover:opacity-80 font-medium transition-all',
-    'disabled:cursor-not-allowed disabled:hover:opacity-80 disabled:bg-neutral-20%',
-    'px-4 py-2',
+    'rounded-md text-white font-medium transition-all disabled:cursor-not-allowed disabled:hover:opacity-100 disabled:bg-primary-10% disabled:text-neutral-10% px-4 py-2',
     {
-      'border bg-transparent border-neutral-20% text-neutral-90%':
-        variantType === 'outline',
-      'border-none': variantType === 'solid',
+      'bg-primary hover:bg-primary-60% active:bg-primary-90%':
+        variant === 'primary' && variantType === 'primary',
+      'bg-secondary hover:bg-secondary-60% active:bg-secondary-90%':
+        variant === 'secondary' && variantType === 'primary',
+      'bg-red hover:bg-red-60% active:bg-red-90%':
+        variant === 'error' && variantType === 'primary',
     },
     {
-      'bg-primary': variant === 'primary' && variantType === 'solid',
-      'bg-secondary': variant === 'secondary' && variantType === 'solid',
-      'bg-red': variant === 'error' && variantType === 'solid',
-      'bg-yellow': variant === 'warning' && variantType === 'solid',
+      'border border-primary text-primary':
+        variant === 'primary' && variantType === 'secondary',
+      'border border-secondary text-secondary':
+        variant === 'secondary' && variantType === 'secondary',
+      'border border-red text-red':
+        variant === 'error' && variantType === 'secondary',
     },
     {
-      'border-bg-primary text-primary':
-        variant === 'primary' && variantType === 'outline',
-      'border-bg-secondary text-secondary':
-        variant === 'secondary' && variantType === 'outline',
-      'border-bg-green text-green':
-        variant === 'success' && variantType === 'outline',
-      'border-bg-red text-red':
-        variant === 'error' && variantType === 'outline',
-      'border-bg-yellow text-yellow':
-        variant === 'warning' && variantType === 'outline',
+      'border-none bg-none text-primary':
+        variant === 'primary' && variantType === 'text-only',
+      'border-none bg-none text-secondary':
+        variant === 'secondary' && variantType === 'text-only',
+      'border-none bg-none text-red':
+        variant === 'error' && variantType === 'text-only',
     },
     {
-      'md:text-[10px] md:px-2 md:py-1': size === 'sm',
-      'md:text-xs md:px-4 md:py-2': size === 'md',
-      'md:text-sm md:px-6 md:py-3': size === 'lg',
+      'md:text-[10px] md:px-2.5 md:py-1.5': size === 'sm',
+      'md:text-xs md:px-3 md:py-2': size === 'md',
+      'md:text-sm md:px-3.5 md:py-2.5': size === 'lg',
+    },
+    {
+      'flex gap-1.5 lg:gap-2 items-center':
+        useIconArrowDown === 'right' || useIconArrowDown === 'left',
     }
   );
 
+  const classNameArrowDown = cn({
+    'text-sm md:text-base mt-0.5': size === 'lg',
+    'text-xs md:text-sm': size === 'md',
+    'text-[10px] md:text-xs': size === 'sm',
+  });
+
+  const iconArrowDown = match(useIconArrowDown)
+    .with('left', () => (
+      <Fragment>
+        <AiFillCaretDown className={classNameArrowDown} /> {props.children}
+      </Fragment>
+    ))
+    .with('right', () => (
+      <Fragment>
+        {props.children} <AiFillCaretDown className={classNameArrowDown} />
+      </Fragment>
+    ))
+    .otherwise(() => props.children);
+
   const buttonState = match(state)
-    .with('default', () => props.children)
+    .with('default', () => iconArrowDown)
     .with('loading', () => 'Loading...')
     .exhaustive();
 

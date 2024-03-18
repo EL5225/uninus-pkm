@@ -28,7 +28,7 @@ export const AuthRegisterPersonalModule: FC = (): ReactElement => {
         Registrasi
       </h1>
       <section className="flex flex-col gap-y-3 mt-[18px]">
-        <Button variantType="outline" size="lg">
+        <Button variantType="secondary" size="lg">
           <div className="flex items-center gap-x-3 justify-center">
             <FcGoogle size={27} />
             <span className="text-grey-400">Daftar Dengan Google</span>

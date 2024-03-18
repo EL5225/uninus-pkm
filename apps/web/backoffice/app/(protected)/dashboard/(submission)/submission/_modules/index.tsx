@@ -136,7 +136,7 @@ export const SubmissionModule: FC = (): ReactElement => {
                 Lihat Detail
               </span>
             </Button>
-            <Button variant={'warning'} size={'sm'}>
+            <Button variant="secondary" size={'sm'}>
               <span className="flex items-center gap-x-1 text-grey-900">
                 <FaRegEdit />
                 Revisi

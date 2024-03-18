@@ -57,7 +57,7 @@ export const ActivityModule: FC = (): ReactElement => {
       cell: ({ row }) => {
         return (
           <section>
-            <Button variant={'warning'} size={'sm'}>
+            <Button variant="secondary" size={'sm'}>
               <span className="flex items-center gap-x-1 text-grey-900">
                 <FaRegEdit />
                 Unggah Laporan
