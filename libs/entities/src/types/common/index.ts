@@ -98,11 +98,12 @@ export type TButton = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > & {
-  variant?: Exclude<TVariant, 'default' | 'info'>;
+  variant?: Exclude<TVariant, 'default' | 'info' | 'success' | 'warning'>;
   size?: TSize;
-  variantType?: TVariantType;
+  variantType?: Extract<TVariant, 'primary' | 'secondary'> | 'text-only';
   href?: string;
   state?: TState;
+  useIconArrowDown?: 'left' | 'right';
 };
 
 export type TInputMolecule = {

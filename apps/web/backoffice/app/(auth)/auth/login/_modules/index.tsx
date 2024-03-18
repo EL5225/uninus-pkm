@@ -127,7 +127,7 @@ export const AuthLoginModule: FC = (): ReactElement => {
       <Button
         onClick={() => signIn('google')}
         type="button"
-        variantType="outline"
+        variantType="secondary"
         size="lg"
       >
         <div className="flex items-center gap-x-3 justify-center">

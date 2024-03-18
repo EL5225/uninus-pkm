@@ -65,7 +65,7 @@ export const Pagination: FC<TPagination> = (props): ReactElement => {
 
   return (
     <div className="flex justify-start gap-x-2">
-      <Button onClick={() => setPage(1)} variantType="outline" size="sm">
+      <Button onClick={() => setPage(1)} variantType="secondary" size="sm">
         <span className="text-grey">
           <TbPlayerTrackPrevFilled />
         </span>
@@ -73,7 +73,7 @@ export const Pagination: FC<TPagination> = (props): ReactElement => {
 
       <Button
         onClick={() => Number(page) > 1 && setPage(Number(page) - 1)}
-        variantType="outline"
+        variantType="secondary"
         size="sm"
       >
         <span className="text-grey">Prev</span>
@@ -83,7 +83,7 @@ export const Pagination: FC<TPagination> = (props): ReactElement => {
         <Button
           onClick={() => setPage(startPage + i)}
           key={startPage + i}
-          variantType={startPage + i === currentPage ? 'solid' : 'outline'}
+          variantType={startPage + i === currentPage ? 'primary' : 'secondary'}
           size="sm"
         >
           <span
@@ -101,7 +101,7 @@ export const Pagination: FC<TPagination> = (props): ReactElement => {
           Number(page) < Number(meta?.meta?.totalPage) &&
           setPage(Number(page) + 1)
         }
-        variantType="outline"
+        variantType="secondary"
         size="sm"
       >
         <span className="text-grey">Next</span>
@@ -109,7 +109,7 @@ export const Pagination: FC<TPagination> = (props): ReactElement => {
 
       <Button
         onClick={() => setPage(Number(meta?.meta?.totalPage))}
-        variantType="outline"
+        variantType="secondary"
         size="sm"
       >
         <span className="text-grey">
@@ -136,7 +136,7 @@ export const DataTable = <T extends Record<string, unknown>>(
   });
   return (
     <section className="shadow-md bg-white h-fit overflow-y-hidden  p-4 rounded-lg w-full gap-y-4 flex flex-col overflow-x-auto">
-      <h1 className='text-lg font-semibold'>{props.title}</h1>
+      <h1 className="text-lg font-semibold">{props.title}</h1>
       <div className="flex md:flex-row flex-col md:gap-x-3 gap-y-4 md:items-center sticky z-10 w-full md:justify-between">
         <div className="flex md:flex-row flex-col md:gap-x-3 gap-y-4 md:items-center">
           <div className="w-fit">
