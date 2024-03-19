@@ -153,7 +153,7 @@ export const TourismModule: FC = (): ReactElement => {
               status="default"
               message="controlled"
               label="Controlled Email"
-              iconRight={<MdEmail />}
+              prepend={<MdEmail />}
               control={form.control}
             />
             <ControlledFieldText
@@ -161,7 +161,7 @@ export const TourismModule: FC = (): ReactElement => {
               status="success"
               message="controlled"
               label="Controlled Email"
-              iconRight={<MdEmail />}
+              append={<MdEmail />}
               control={form.control}
             />
             <ControlledFieldText
@@ -169,7 +169,6 @@ export const TourismModule: FC = (): ReactElement => {
               status="warning"
               message="controlled"
               label="Controlled Email"
-              iconRight={<MdEmail />}
               control={form.control}
             />
             <ControlledFieldText
@@ -178,7 +177,8 @@ export const TourismModule: FC = (): ReactElement => {
               message="controlled"
               label="Controlled Email"
               id="email"
-              iconRight={<MdEmail />}
+              append={<MdEmail />}
+              prepend={<MdEmail />}
               control={form.control}
             />
           </div>
@@ -187,6 +187,8 @@ export const TourismModule: FC = (): ReactElement => {
               label="Textarea"
               name="messages"
               control={form.control}
+              append={<MdEmail />}
+              status="default"
             />
             <ControlledFieldTextArea
               label="Textarea"

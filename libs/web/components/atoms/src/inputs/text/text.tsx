@@ -9,7 +9,7 @@ export const InputText: FC<TInput> = ({
 }) => {
   const id = useId();
 
-  if (props.iconRight) {
+  if (props.append && props.prepend) {
     return (
       <div
         className={cn(
@@ -33,13 +33,94 @@ export const InputText: FC<TInput> = ({
         <input
           {...props}
           id={id}
-          className={className({ size, status, iconRight: props.iconRight })}
+          className={className({
+            size,
+            status,
+            append: props.append,
+            prepend: props.prepend,
+          })}
           placeholder={placeholder}
         />
         <span
           className={cn('absolute top-1/2 right-2 transform -translate-y-1/2')}
         >
-          {props.iconRight}
+          {props.append}
+        </span>
+        <span
+          className={cn('absolute top-1/2 left-2 transform -translate-y-1/2')}
+        >
+          {props.prepend}
+        </span>
+      </div>
+    );
+  }
+
+  if (props.append) {
+    return (
+      <div
+        className={cn(
+          'relative',
+          {
+            'text-neutral-60% focus-within:text-neutral-100%':
+              status === 'default' || !status,
+            'bg-green-10% text-green placeholder:text-green':
+              status === 'success',
+            'bg-red-10% text-red placeholder:text-red': status === 'error',
+            'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+              status === 'warning',
+          },
+          {
+            'text-sm': size === 'sm',
+            'text-lg': size === 'md',
+            'text-xl': size === 'lg',
+          }
+        )}
+      >
+        <input
+          {...props}
+          id={id}
+          className={className({ size, status, append: props.append })}
+          placeholder={placeholder}
+        />
+        <span
+          className={cn('absolute top-1/2 right-2 transform -translate-y-1/2')}
+        >
+          {props.append}
+        </span>
+      </div>
+    );
+  }
+  if (props.prepend) {
+    return (
+      <div
+        className={cn(
+          'relative',
+          {
+            'text-neutral-60% focus-within:text-neutral-100%':
+              status === 'default' || !status,
+            'bg-green-10% text-green placeholder:text-green':
+              status === 'success',
+            'bg-red-10% text-red placeholder:text-red': status === 'error',
+            'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+              status === 'warning',
+          },
+          {
+            'text-sm': size === 'sm',
+            'text-lg': size === 'md',
+            'text-xl': size === 'lg',
+          }
+        )}
+      >
+        <input
+          {...props}
+          id={id}
+          className={className({ size, status, prepend: props.prepend })}
+          placeholder={placeholder}
+        />
+        <span
+          className={cn('absolute top-1/2 left-2 transform -translate-y-1/2')}
+        >
+          {props.prepend}
         </span>
       </div>
     );

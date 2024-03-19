@@ -72,8 +72,9 @@ export type TState = 'default' | 'loading';
 
 export type TInputExtend<T = undefined> = {
   size?: TSize;
-  status?: Exclude<TVariant, 'primary' | 'secondary'> | T;
-  iconRight?: ReactNode;
+  status?: Exclude<TVariant, 'primary' | 'secondary' | 'info'> | T;
+  append?: ReactNode;
+  prepend?: ReactNode;
 };
 
 export type TInput = Omit<

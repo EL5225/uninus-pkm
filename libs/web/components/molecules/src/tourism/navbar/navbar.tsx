@@ -46,7 +46,7 @@ export const Navbar: FC<{ logoUrl: string }> = ({ logoUrl }): ReactElement => {
           <li>Inspirasi</li>
         </ul>
         <div className="relative">
-          <InputText status="default" size="sm" iconRight={<IoSearch />} />
+          <InputText status="default" size="sm" append={<IoSearch />} />
         </div>
       </div>
     </nav>
