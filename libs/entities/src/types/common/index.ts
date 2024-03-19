@@ -12,6 +12,8 @@ import type {
   HTMLAttributes,
   InputHTMLAttributes,
   LabelHTMLAttributes,
+  ReactElement,
+  ReactNode,
   TextareaHTMLAttributes,
 } from 'react';
 import type { FieldValues, UseControllerProps } from 'react-hook-form';
@@ -71,6 +73,7 @@ export type TState = 'default' | 'loading';
 export type TInputExtend<T = undefined> = {
   size?: TSize;
   status?: Exclude<TVariant, 'primary' | 'secondary'> | T;
+  iconRight?: ReactNode;
 };
 
 export type TInput = Omit<

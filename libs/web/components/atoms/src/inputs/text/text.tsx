@@ -1,5 +1,5 @@
 import { FC, useId } from 'react';
-import { TInput, className } from '@psu/entities';
+import { TInput, className, cn } from '@psu/entities';
 
 export const InputText: FC<TInput> = ({
   size = 'sm',
@@ -8,6 +8,42 @@ export const InputText: FC<TInput> = ({
   ...props
 }) => {
   const id = useId();
+
+  if (props.iconRight) {
+    return (
+      <div
+        className={cn(
+          'relative',
+          {
+            'text-neutral-60% focus-within:text-neutral-100%':
+              status === 'default' || !status,
+            'bg-green-10% text-green placeholder:text-green':
+              status === 'success',
+            'bg-red-10% text-red placeholder:text-red': status === 'error',
+            'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+              status === 'warning',
+          },
+          {
+            'text-sm': size === 'sm',
+            'text-lg': size === 'md',
+            'text-xl': size === 'lg',
+          }
+        )}
+      >
+        <input
+          {...props}
+          id={id}
+          className={className({ size, status, iconRight: props.iconRight })}
+          placeholder={placeholder}
+        />
+        <span
+          className={cn('absolute top-1/2 right-2 transform -translate-y-1/2')}
+        >
+          {props.iconRight}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <input
