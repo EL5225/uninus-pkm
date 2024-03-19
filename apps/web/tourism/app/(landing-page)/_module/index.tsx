@@ -151,7 +151,7 @@ export const TourismModule: FC = (): ReactElement => {
             <ControlledFieldText
               name="email"
               status="default"
-              message="controlled"
+              message="Controlled"
               label="Controlled Email"
               prepend={<MdEmail />}
               control={form.control}
@@ -159,7 +159,7 @@ export const TourismModule: FC = (): ReactElement => {
             <ControlledFieldText
               name="email"
               status="success"
-              message="controlled"
+              message="Controlled"
               label="Controlled Email"
               append={<MdEmail />}
               control={form.control}
@@ -167,14 +167,14 @@ export const TourismModule: FC = (): ReactElement => {
             <ControlledFieldText
               name="email"
               status="warning"
-              message="controlled"
+              message="Controlled"
               label="Controlled Email"
               control={form.control}
             />
             <ControlledFieldText
               name="email"
               status="error"
-              message="controlled"
+              message="Controlled"
               label="Controlled Email"
               id="email"
               append={<MdEmail />}
