@@ -17,10 +17,10 @@ export const InputText: FC<TInput> = ({
           {
             'text-neutral-60% focus-within:text-neutral-100%':
               status === 'default' || !status,
-            'bg-green-10% text-green placeholder:text-green':
+            'bg-primary-10% text-primary placeholder:text-primary':
               status === 'success',
             'bg-red-10% text-red placeholder:text-red': status === 'error',
-            'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+            'bg-secondary-10% text-secondary-60% placeholder:text-secondary-60%':
               status === 'warning',
           },
           {
@@ -63,10 +63,10 @@ export const InputText: FC<TInput> = ({
           {
             'text-neutral-60% focus-within:text-neutral-100%':
               status === 'default' || !status,
-            'bg-green-10% text-green placeholder:text-green':
+            'bg-primary-10% text-primary placeholder:text-primary':
               status === 'success',
             'bg-red-10% text-red placeholder:text-red': status === 'error',
-            'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+            'bg-secondary-10% text-secondary-60% placeholder:text-secondary-60%':
               status === 'warning',
           },
           {
@@ -98,10 +98,10 @@ export const InputText: FC<TInput> = ({
           {
             'text-neutral-60% focus-within:text-neutral-100%':
               status === 'default' || !status,
-            'bg-green-10% text-green placeholder:text-green':
+            'bg-primary-10% text-primary placeholder:text-primary':
               status === 'success',
             'bg-red-10% text-red placeholder:text-red': status === 'error',
-            'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+            'bg-secondary-40% text-secondary-60% placeholder:text-secondary-60%':
               status === 'warning',
           },
           {

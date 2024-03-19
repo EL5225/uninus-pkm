@@ -18,9 +18,9 @@ export const Message: FC<TMessage> = (props): ReactElement => {
     'text-xs flex items-center pt-1 gap-x-1 mt-[-7px]',
     {
       'text-red': status === 'error',
-      'text-green': status === 'success',
+      'text-primary': status === 'success',
       'text-grey': status === 'default',
-      'text-yellow-60%': status === 'warning',
+      'text-secondary-60%': status === 'warning',
     },
     props.className
   );

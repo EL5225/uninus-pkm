@@ -37,9 +37,10 @@ export const className = ({
     {
       'bg-white border border-neutral-60% focus-within:border-neutral-100% text-neutral-100% placeholder:text-neutral-50%':
         status === 'default' || !status,
-      'bg-green-10% text-green placeholder:text-green': status === 'success',
+      'bg-primary-10% border-primary text-primary placeholder:text-primary-40%':
+        status === 'success',
       'bg-red-10% text-red placeholder:text-red': status === 'error',
-      'bg-yellow-10% text-yellow-60% placeholder:text-yellow-60%':
+      'bg-secondary-10% border-secondary text-secondary-60% placeholder:text-secondary-40%':
         status === 'warning',
     }
   );
