@@ -11,7 +11,7 @@ export const InputCheckbox: FC<TInputSpecial> = ({
 
   const className = clsx(
     'before:block before:-translate-y-2/4 before:-translate-x-2/4',
-    "before:content[''] peer relative cursor-pointer appearance-none rounded-md",
+    "before:content[''] peer relative cursor-pointer appearance-none rounded",
     'border border-grey transition-all before:absolute before:top-2/4 before:left-2/4',
     'before:rounded-full before:bg-primary-2 before:opacity-0 before:transition-opacity',
     'checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-10',
@@ -26,14 +26,13 @@ export const InputCheckbox: FC<TInputSpecial> = ({
   const iconClassName = clsx(
     'absolute text-white transition-opacity opacity-0 pointer-events-none peer-checked:opacity-100',
     {
-      'left-[1.8px]': size === 'sm',
-      'left-[2px]': size === 'md',
-      'left-[3px]': size === 'lg',
+      'left-[1px]': size === 'sm',
+      'left-[2px]': size === 'md' || size === 'lg',
     }
   );
 
   const svgClassName = clsx({
-    'h-3 w-3': size === 'sm',
+    'h-3 w-3 ml-[1px]': size === 'sm',
     'h-4 w-4': size === 'md',
     'h-5 w-5': size === 'lg',
   });

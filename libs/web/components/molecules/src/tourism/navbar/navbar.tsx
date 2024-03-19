@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FC, ReactElement, useState } from 'react';
 import { InputText } from '@psu/web-component-atoms';
-import { IoCloseSharp } from 'react-icons/io5';
+import { IoCloseSharp, IoSearch } from 'react-icons/io5';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 export const Navbar: FC<{ logoUrl: string }> = ({ logoUrl }): ReactElement => {
@@ -45,7 +45,9 @@ export const Navbar: FC<{ logoUrl: string }> = ({ logoUrl }): ReactElement => {
           <li>Kontak</li>
           <li>Inspirasi</li>
         </ul>
-        <InputText size="sm" placeholder="Cari wisata ..." />
+        <div className="relative">
+          <InputText status="default" size="sm" append={<IoSearch />} />
+        </div>
       </div>
     </nav>
   );

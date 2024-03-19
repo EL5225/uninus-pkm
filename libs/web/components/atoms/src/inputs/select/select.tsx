@@ -19,7 +19,7 @@ export const InputSelect: FC<TSelect> = (props): ReactElement => {
     .otherwise(() => '#6A7280');
 
   const statusDropdownIconColor = cn('mr-2', {
-    'text-error': props.status === 'error',
+    'text-red-40%': props.status === 'error',
     'text-neutral-40%': props.status === 'none' || !props.status,
   });
 
