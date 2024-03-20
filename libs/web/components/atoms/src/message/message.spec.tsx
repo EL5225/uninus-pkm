@@ -17,13 +17,13 @@ describe('Testing Message component', () => {
     expect(container.firstChild).toHaveClass('text-grey');
 
     rerender(<Message status="error">Test Message</Message>);
-    expect(container.firstChild).toHaveClass('text-error');
+    expect(container.firstChild).toHaveClass('text-red');
 
     rerender(<Message status="success">Test Message</Message>);
-    expect(container.firstChild).toHaveClass('text-success');
+    expect(container.firstChild).toHaveClass('text-primary');
 
     rerender(<Message status="warning">Test Message</Message>);
-    expect(container.firstChild).toHaveClass('text-warning');
+    expect(container.firstChild).toHaveClass('text-secondary-60%');
   });
 
   it('applies additional classes passed in the className prop', () => {
