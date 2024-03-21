@@ -132,7 +132,7 @@ export const AuthLoginModule: FC = (): ReactElement => {
             disabled={isValid || isLoading}
             type="submit"
             size="lg"
-            className="bg-primary w-full py-2 text-white rounded-md"
+            className="bg-primary w-full py-2 text-white rounded-md hover:bg-primary-60% active:bg-primary-90% font-medium transition-all disabled:cursor-not-allowed disabled:hover:opacity-100 disabled:bg-primary-10% disabled:text-neutral-10%"
           >
             Masuk
           </Button>
