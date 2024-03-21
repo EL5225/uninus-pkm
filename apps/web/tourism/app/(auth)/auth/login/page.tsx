@@ -12,6 +12,7 @@ const AuthLoginPage: NextPage = (): ReactElement => {
           alt="logo"
           width={250}
           height={219}
+          priority
         />
         <h1 className="text-2xl md:text-3xl font-bold text-white text-center">
           WISATA DESA BOJONGSARI

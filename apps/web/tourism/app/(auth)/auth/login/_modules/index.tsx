@@ -69,7 +69,7 @@ export const AuthLoginModule: FC = (): ReactElement => {
     }, 5000);
   }, [error]);
 
-  const TogglePassword = () => {
+  const TogglePassword: FC = (): ReactElement => {
     return (
       <span
         className="cursor-pointer"
@@ -85,7 +85,13 @@ export const AuthLoginModule: FC = (): ReactElement => {
   return (
     <section className="bg-white rounded-l-2xl p-2 md:p-6 min-h-screen flex flex-col justify-center items-center">
       <div className="flex flex-col items-center gap-2 mb-10 lg:hidden">
-        <Image src="/assets/logo.svg" alt="logo" width={75} height={75} />
+        <Image
+          src="/assets/logo.svg"
+          alt="logo"
+          width={75}
+          height={75}
+          priority
+        />
         <h1 className="text-2xl md:text-3xl font-bold text-black text-center">
           WISATA DESA BOJONGSARI
         </h1>
@@ -132,7 +138,7 @@ export const AuthLoginModule: FC = (): ReactElement => {
             disabled={isValid || isLoading}
             type="submit"
             size="lg"
-            className="bg-primary w-full py-2 text-white rounded-md hover:bg-primary-60% active:bg-primary-90% font-medium transition-all disabled:cursor-not-allowed disabled:hover:opacity-100 disabled:bg-primary-10% disabled:text-neutral-10%"
+            className="w-full"
           >
             Masuk
           </Button>
