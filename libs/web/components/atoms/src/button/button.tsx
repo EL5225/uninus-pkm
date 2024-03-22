@@ -10,10 +10,12 @@ export const Button: FC<TButton> = ({
   variantType = 'primary',
   state = 'default',
   useIconArrowDown,
+  className,
   ...props
 }): ReactElement => {
-  const className = cn(
+  const classNames = cn(
     'rounded-md text-white font-medium transition-all disabled:cursor-not-allowed disabled:hover:opacity-100 disabled:bg-primary-10% disabled:text-neutral-10% px-4 py-2',
+    className,
     {
       'bg-primary hover:bg-primary-60% active:bg-primary-90%':
         variant === 'primary' && variantType === 'primary',
@@ -75,13 +77,13 @@ export const Button: FC<TButton> = ({
 
   return match(props.href)
     .with(undefined, () => (
-      <button className={className} {...props}>
+      <button className={classNames} {...props}>
         {buttonState}
       </button>
     ))
     .with(P.string, (link) => (
       <Link href={link}>
-        <button className={className} {...props}>
+        <button className={classNames} {...props}>
           {buttonState}
         </button>
       </Link>
