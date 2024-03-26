@@ -17,9 +17,6 @@
     ],
     "sharedGlobals": []
   },
-  "affected": {
-    "defaultBase": "develop"
-  },
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
@@ -64,6 +61,16 @@
         "serveTargetName": "serve",
         "previewTargetName": "preview"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static"
+      }
     }
   ],
   "generators": {
@@ -95,6 +102,12 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
-  }
+  },
+  "defaultBase": "develop"
 }

@@ -1,0 +1,24 @@
+{
+  "name": "api-market",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/api/market/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "api-market:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "api-market:build:development"
+        },
+        "production": {
+          "buildTarget": "api-market:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
