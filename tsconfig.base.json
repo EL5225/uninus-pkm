@@ -16,7 +16,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@psu/api-lib-backoffice": ["libs/api/backoffice/src/index.ts"],
+      "@psu/api-lib-market": ["libs/api/market/src/index.ts"],
+      "@psu/api-lib-tourism": ["libs/api/tourism/src/index.ts"],
+      "@psu/drizzle": ["libs/drizzle/src/index.ts"],
       "@psu/entities": ["libs/entities/src/index.ts"],
+      "@psu/trpc-client": ["libs/trpc/client/src/index.ts"],
+      "@psu/trpc-router": ["libs/trpc/router/src/index.ts"],
+      "@psu/trpc-server": ["libs/trpc/server/src/index.ts"],
       "@psu/web-auth": ["libs/web/auth/src/index.ts"],
       "@psu/web-component-atoms": ["libs/web/components/atoms/src/index.ts"],
       "@psu/web-component-molecules": [

@@ -1,0 +1,19 @@
+{
+  "name": "api-lib-tourism",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/tourism/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/tourism",
+        "main": "libs/api/tourism/src/index.ts",
+        "tsConfig": "libs/api/tourism/tsconfig.lib.json",
+        "assets": ["libs/api/tourism/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

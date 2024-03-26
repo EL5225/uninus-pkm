@@ -1,7 +1,0 @@
-{
-  "name": "web-market-e2e",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/web/market-e2e/src",
-  "targets": {},
-  "implicitDependencies": ["web-market"]
-}

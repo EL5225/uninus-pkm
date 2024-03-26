@@ -1,5 +1,4 @@
 'use client';
-// import { trpc } from '@psu/web-services';
 import { NavbarMarket } from '@psu/web-component-molecules';
 import { FC, ReactElement } from 'react';
 

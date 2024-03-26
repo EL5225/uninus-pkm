@@ -1,0 +1,11 @@
+{
+  "name": "@psu/api-lib-market",
+  "version": "0.0.1",
+  "dependencies": {
+    "zod": "^3.22.4",
+    "@psu/trpc-server": "0.0.1"
+  },
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts"
+}

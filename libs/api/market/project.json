@@ -1,0 +1,19 @@
+{
+  "name": "api-lib-market",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/market/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/market",
+        "main": "libs/api/market/src/index.ts",
+        "tsConfig": "libs/api/market/tsconfig.lib.json",
+        "assets": ["libs/api/market/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
