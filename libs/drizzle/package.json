@@ -2,13 +2,12 @@
   "name": "@psu/drizzle",
   "version": "0.0.1",
   "dependencies": {
-    "tslib": "^2.3.0",
     "drizzle-orm": "^0.30.2",
     "drizzle-kit": "^0.20.14",
-    "pg": "^8.11.3",
-    "@auth/core": "^0.28.1"
+    "pg": "^8.11.3"
   },
-  "type": "commonjs",
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts"
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "private": true
 }

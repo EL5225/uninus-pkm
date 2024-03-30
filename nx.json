@@ -19,21 +19,6 @@
   },
   "plugins": [
     {
-      "plugin": "@nx/next/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "devTargetName": "dev",
-        "startTargetName": "start",
-        "serveStaticTargetName": "serve-static"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
@@ -74,14 +59,21 @@
     }
   ],
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "css",
-        "linter": "eslint"
-      }
-    },
     "@nx/react": {
-      "library": {}
+      "library": {
+        "style": "tailwind",
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
+      },
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "tailwind"
+      }
     }
   },
   "nxCloudAccessToken": "YjYxZWZhNjQtNDUwMS00NGE1LWE5NzItZDAxMzBkMWEzNTZkfHJlYWQtd3JpdGU=",
@@ -93,16 +85,6 @@
     }
   },
   "targetDefaults": {
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "@nx/js:swc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
     "@nx/vite:build": {
       "cache": true,
       "dependsOn": ["^build"],

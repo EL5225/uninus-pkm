@@ -16,29 +16,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@psu/api-lib-backoffice": ["libs/api/backoffice/src/index.ts"],
-      "@psu/api-lib-market": ["libs/api/market/src/index.ts"],
-      "@psu/api-lib-tourism": ["libs/api/tourism/src/index.ts"],
       "@psu/drizzle": ["libs/drizzle/src/index.ts"],
-      "@psu/entities": ["libs/entities/src/index.ts"],
       "@psu/trpc-client": ["libs/trpc/client/src/index.ts"],
       "@psu/trpc-router": ["libs/trpc/router/src/index.ts"],
       "@psu/trpc-server": ["libs/trpc/server/src/index.ts"],
-      "@psu/web-auth": ["libs/web/auth/src/index.ts"],
-      "@psu/web-component-atoms": ["libs/web/components/atoms/src/index.ts"],
-      "@psu/web-component-molecules": [
-        "libs/web/components/molecules/src/index.ts"
-      ],
-      "@psu/web-component-organisms": [
-        "libs/web/components/organisms/src/index.ts"
-      ],
-      "@psu/web-component-templates": [
-        "libs/web/components/templates/src/index.ts"
-      ],
-      "@psu/web-modules": ["libs/web/modules/src/index.ts"],
-      "@psu/web-modules/server": ["libs/web/modules/src/server.ts"],
-      "@psu/web-services": ["libs/web/service/src/index.ts"],
-      "@psu/web-services/server": ["libs/web/service/src/server.ts"]
+      "@psu/ui-atoms": ["libs/web/components/atoms/src/index.ts"],
+      "@psu/ui-molecules": ["libs/web/components/molecules/src/index.ts"],
+      "@psu/ui-organisms": ["libs/web/components/organisms/src/index.ts"],
+      "@psu/ui-templates": ["libs/web/components/templates/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

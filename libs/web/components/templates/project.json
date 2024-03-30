@@ -1,15 +1,9 @@
 {
-  "name": "web-component-templates",
+  "name": "ui-templates",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/web/components/templates/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": ["libs/web/components/templates/**/*.ts"]
-      }
-    }
-  }
+  "// targets": "to see all targets run: nx show project ui-templates --web",
+  "targets": {}
 }

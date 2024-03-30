@@ -2,8 +2,7 @@
   "name": "@psu/trpc-router",
   "version": "0.0.1",
   "dependencies": {
-    "@psu/trpc-server": "0.0.1",
-    "@psu/api-lib-market": "0.0.1"
+    "@psu/trpc-server": "0.0.1"
   },
   "main": "./index.js",
   "module": "./index.mjs",
