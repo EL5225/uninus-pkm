@@ -21,8 +21,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'npm'
-      - run: npm ci
+          cache: 'pnpm'
+      - run: npm i -g pnpm && pnpm install
       - uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx affected --base=[SHA1] --head=[SHA2] -t lint build
+      - run: pnpx nx affected --base=[SHA1] --head=[SHA2] -t lint build
